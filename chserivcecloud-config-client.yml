@@ -4,29 +4,29 @@
     - dev
 ---   
 server: 
-  port: 8201
+  port: 3344
   
 
 spring: 
   profiles: dev  #开发环境
   application: 
-      name: chserivcecloud-config-client
+      name: microservicecloud-config
 
 eureka: 
   client: 
      service-url: 
-      defaultZone: http://eureka-dev.com:7001/eureka/  
+      defaultZone: http://server1:5761/eureka/,http://server2:5762/eureka/,http://server3:5763/eureka/
          
 ---
 server: 
-  port: 8202 
+  port: 3345 
 
 spring: 
   profiles: test  #测试环境
   application: 
-      name: chserivcecloud-config-client
+      name: microservicecloud-config
       
 eureka: 
   client: 
      service-url: 
-      defaultZone: http://eureka-test.com:7001/eureka/
+      defaultZone: http://server1:5761/eureka/,http://server2:5762/eureka/,http://server3:5763/eureka/
